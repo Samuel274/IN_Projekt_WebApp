@@ -1,6 +1,40 @@
-.home_buttons{
-  flex: 50%;
+
+.home{
+
+}
+.home__header {
+    height: 60px;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    background-color: wheat;
+    position: sticky; /*stick header on top*/
+    top: 0;
+    z-index: 1;
+}
+
+
+.home__buttonsContainer{
+  flex: 100%;
   height: 100%;
   display: flex;
+  justify-content: end;
   align-items: center;
+  margin: 10px;
+}
+
+.home__button{
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.header__logo{
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 0px;
 }

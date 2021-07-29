@@ -56,13 +56,8 @@ function App() {
   return (
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
-      <Router>
-
-      <div className="loggedInContainer">
-              <h1>{authState.username} </h1>
-              {authState.status && <button onClick={logout}> Logout</button>}
-            </div>
-          
+        <Router>
+       
 
       <Switch>
         <Route path="/" exact component={Home} />
@@ -76,7 +71,7 @@ function App() {
       </Switch>
 
 
-    
+  
       </Router>
       </AuthContext.Provider>
     

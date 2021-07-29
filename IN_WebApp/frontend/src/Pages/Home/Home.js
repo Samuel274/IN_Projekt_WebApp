@@ -1,20 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './home.css';
 
-function main() {
+
+function home() {
     return (
-
-        <div className="home">
-            <h1>HOME</h1>
-
-            <div className="home_buttons">
-                <Link to="/login">Login</Link>
-                <Link to="/registration">Register</Link>
-            </div>
-
-    </div>
+        <div>
+            <h1>Home</h1>
+        </div>
     )
 }
 
-export default main
+export default home
+
 

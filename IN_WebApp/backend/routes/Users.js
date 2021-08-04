@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Users } = require('../models');
+const { Users, sequelize } = require('../models');
 const bcrypt = require("bcrypt");
 const {validateToken} = require("../middlewares/AuthMiddleware");
 const {sign} = require('jsonwebtoken');
@@ -58,6 +58,18 @@ router.get("/basicinfo/:id", async (req, res) => {
        });
    res.json(basicInfo);
 });
+
+router.get("/ranking", async (req, res) => {
+    const { username, score } = req.body;
+    
+    const scores = await Users.findAll({
+        limit: 10 ,
+        order: [['score', 'DESC']], /**Absteigend nach Score sortieren */
+        attributes: {exclude: ['password', 'id', 'permission', 'createdAt', 'updatedAt']}
+    })
+
+    res.json(scores);
+})
 
 
 module.exports = router;

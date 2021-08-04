@@ -2,8 +2,11 @@ import React from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-
+import './registration.css';
+import {useHistory} from 'react-router-dom';
 function Registration() {
+
+    let history = useHistory();
 
     const initialValues = {
         username: "",
@@ -22,9 +25,16 @@ function Registration() {
         password: Yup.string().min(4).max(20).required(),
     });
 
+    const backToLogin = () => {
+        history.push("/login");
+    }
+
 
     return (
         <div className="registration">
+            LOGO
+        
+        <div className="registration__container">
             <h1>Registration</h1>
         <div>
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -46,12 +56,14 @@ function Registration() {
                     placeholder="(Your Password...)" 
                     />
 
+
                     <button type="submit"> Register </button>
                     
                 </Form>
             </Formik>
         </div>
         </div>
+         </div>
     )
 }
 

@@ -1,0 +1,160 @@
+.dashboard {
+    grid-template-columns: auto 1fr;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    position: sticky; /*stick header on top*/
+    top: 0;
+    z-index: 100;
+}
+.grid__dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 60px 60px 60px;
+    grid-template-areas: 
+    "title title"
+    "header header"
+    "sidebar sidebar"
+    "content_ content_"
+    "footer_ footer_"
+    ;
+}
+
+.title {
+    grid-area: title;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.title__accountIcon {
+    transform: scale(1.8);
+    margin-left: auto;
+    margin-right: 3%;
+    margin-top: 10px;
+}
+
+.title__accounIcon:hover{
+    cursor: pointer;
+}
+
+.title__logo {
+    height: 50px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #00587A;
+    border-bottom: 2px solid #293846;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.header__title {
+    color: white;
+    display: flex;
+    flex: 10%;
+    font-size: 40px;
+    margin-left: 180px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: red;
+}
+
+.content_ {
+    grid-area: content_;
+    background-color: #E7E7DE;
+}
+
+.footer_ {
+    grid-area: footer_;
+    background-color: red;
+}
+
+.username {
+    font-size: 30px;
+    margin-left: auto;
+}
+
+.Sidebar__container {
+    background-color: aqua;
+    margin-top: -16px;
+    height: 100vh;
+}
+
+.SidebarList {
+    display: flex;
+}
+
+.Sidebar__container ul li {
+    margin-top: 20px;
+}
+
+.Sidebar__container ul li{
+}
+
+@media screen and (min-width: 736px){
+    .grid__dashboard {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        grid-template-rows: 70px 60px 1fr 100px;
+        grid-template-areas: 
+        "title title"
+        "header header"
+        "sidebar content_"
+        "sidebar footer_";
+    }
+
+    .Sidebar__container {
+        background-color: #00587A;
+        margin-top: -16px;
+        height: 100vh;
+    }
+    
+    .SidebarList{
+        display: contents;
+        height: auto;
+        padding: 0;
+        align-items: center;
+    }
+
+    .SidebarList .row{
+        width: 100%;
+        height: 60px;
+        border: 1px solid black;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .row #icon{
+        flex: 30%;
+        display: grid;
+        place-items: center;
+    }
+
+    .row #title{
+        flex: 70%
+    }
+
+    .SidebarList .row:hover{
+        cursor: pointer;
+        background-color: #293846;
+    }
+    
+    .Sidebar__container ul li {
+        margin-top: 20px;
+    }
+    
+    .Sidebar__container ul li{
+        margin-top: 15px;
+    }
+
+}

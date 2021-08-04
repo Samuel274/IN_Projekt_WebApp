@@ -6,14 +6,19 @@ import Home from './Pages/Home/Home';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Catalogue from './Pages/Catalogue/Catalogue';
 import Modules from './Pages/Modules/Modules';
+import Ranking from './Pages/Ranking/Ranking';
 import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
 import {AuthContext} from './Auth/AuthContext';
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import axios from 'axios';
-
+import Sidebar from './Components/Sidebar/Sidebar';
+import Header from './Components/Header/Header'
+import QuizApp from './Components/Quiz/QuizApp';
+import Quiz from './Components/Quiz/Quiz';
 
 function App() {
 
+  
   let history = useHistory();
 
   const [authState, setAuthState] = useState(
@@ -55,19 +60,31 @@ function App() {
 
   return (
     <div className="App">
+      
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-       
+        
 
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/registration" exact component={Registration} />
+        <Route path="/" exact component={Home} /> {/**Exclude Sidebar from Header */}
         <Route path="/login" exact component={Login} />
+        <Route path="/registration" exact component={Registration} />
+        <Fragment>
+          {authState.status ? ( 
+            <>
+        
+        
+        
+        
+            </>
+          ) : ( console.log("hallo"))} 
+        
         <Route path="/dashboard/:id" exact component={Dashboard} />
         <Route path="/catalogue/" exact component={Catalogue} />
         <Route path="/modules/:id" exact component={Modules} />
-        <Route path="*" exact component={PageNotFound} />
-
+        <Route path="/ranking" exact component={Ranking} />
+        <Route path="/quiz" exact component={QuizApp} />
+        </Fragment>
       </Switch>
 
 
@@ -75,7 +92,7 @@ function App() {
       </Router>
       </AuthContext.Provider>
     
-    
+      
     </div>
   );
 }

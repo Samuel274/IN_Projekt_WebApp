@@ -1,9 +1,11 @@
 import React from 'react'
+import Sidebar from '../../Components/Sidebar/Sidebar';
+import './catalogue.css'
 
 function catalogue() {
     return (
-        <div>
-            Hier werden alle Module angezeigt
+        <div className="catalogue">
+            <h1>KATALOG</h1>
         </div>
     )
 }

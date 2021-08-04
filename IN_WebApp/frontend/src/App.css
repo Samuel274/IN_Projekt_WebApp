@@ -1,14 +1,19 @@
 .App {
   margin-top: 0px;
   padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-self: row;
 
 }
+
+
 
 .header__container{
   background-color: beige;
   display: flex;
   height: 60px;
-  
 }
 
 .header__left{
@@ -26,4 +31,21 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+.Sidebar {
+  background-color: #313F50;
+  width: 200px;
+}
+
+.Header {
+  background-color: green;
+}
+
+.logo{
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 0px;
 }

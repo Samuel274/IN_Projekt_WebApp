@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import {useParams ,useHistory} from 'react-router-dom';
 import { AuthContext} from "../../Auth/AuthContext";
+import './login.css';
 
 
 function Login() {
@@ -29,9 +30,9 @@ function Login() {
 
     return (
         <div className="login">
-        
-        <h1>Login</h1>
+            Logo
         <div className="loginContainer">
+            <h1>Login</h1>
             <label>Username: </label>
             <input 
             type="text" 

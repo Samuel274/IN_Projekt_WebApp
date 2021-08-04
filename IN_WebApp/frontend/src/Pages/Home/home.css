@@ -1,40 +1,223 @@
-
-.home{
-
-}
-.home__header {
+.home__container {
+    grid-template-columns: auto 1fr;
     height: 60px;
-    margin-top: 0px;
-    display: flex;
+    width: 100%;
     align-items: center;
-    background-color: wheat;
+    background-color: white;
     position: sticky; /*stick header on top*/
     top: 0;
-    z-index: 1;
+    z-index: 100;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 1fr 1fr 100px;
+    grid-template-areas: 
+    "title title"
+    "bannerLeft bannerLeft"
+    "bannerRight bannerRight"
+    "counter counter"
+    "content content"
+    "footer footer";
 }
 
-
-.home__buttonsContainer{
-  flex: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin: 10px;
+.title {
+    grid-area: title;
+    display: flex;
+}
+.bannerLeft {
+    grid-area: bannerLeft;
+    background-color: #00587A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.bannerLeft__container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    background-color: #00587A;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.bannerRight {
+    grid-area: bannerRight;
+    background-color: #00587A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerRight__image{
+    max-height: 380px;
+    z-index: 1; /*In den Vordergrund*/
+    margin-bottom: 12px;
+    object-fit: contain;
+    margin-left: -50px;
+}
+.counter {
+    grid-area: counter;
+    background-color: aliceblue;
+}
+.content{
+    grid-area: content;
+    background-color: #E7E7DE;
+}
+.footer {
+    grid-area: footer;
+    height: 10px;
+}
+
+.banner__buttons{
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
 .home__button{
-    width: 100px;
-    height: 40px;
-    cursor: pointer;
-    margin-right: 10px;
     background-color: white;
+    font-size: 28px;
+    border-radius: 12px;
+    margin: 20px;
+    border: 0 solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.home__button:hover {
+    background-color: green;
+  }
+
+
+@media screen and (min-width: 736px){
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 370px 100px 100px;
+        grid-template-areas: 
+        "title title"
+        "bannerLeft bannerRight"
+        "counter counter"
+        "content content"
+        "footer footer";
+    }
+
+    .bannerRight{
+        grid-area: bannerRight;
+        background-color: #00587A;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .bannerLeft {
+        grid-area: bannerLeft;
+        background-color: #00587A;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: center;
+    }
+
+    .bannerLeft__container {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        width: 100%;
+        background-color: #00587A;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+    }
+
+    .bannerRight__image{
+        max-height: 380px;
+        z-index: 1; /*In den Vordergrund*/
+        margin-bottom: 12px;
+        object-fit: contain;
+        margin-left: 50px;
+    }
 }
 
-.header__logo{
+
+
+.home__search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+}
+.home__dropdown {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.home__searchInput[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../Assets/Images/icons8-search-50.png');
+    background-size: 20px;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 5px 10px 5px 40px;
+    transition: width 0.4s ease-in-out;
+    z-index: 1;
+  }
+
+  .home__searchInput[type=text]:focus {
+    min-width: 200px;
+    width: 50%;
+  }
+
+
+
+
+.home__logo{
     width: 100px;
     height: 60px;
     object-fit: contain;
     margin: 0 20px;
     margin-top: 0px;
+}
+
+.home__banner {
+    height: 380px;
+    display: flex;
+    align-items: center;
+    background-color: #00587A;
+    border-top: 0.2px solid;
+    border-bottom: 0.2px solid;
+    border-color: black;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.home__bannerLeft{
+    background-color: aliceblue;
+    width: 50%;
+    height: 50%;
+}
+
+.home__bannerRight{
+    width: 50%;
+    height: 50%;
 }

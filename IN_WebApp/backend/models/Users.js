@@ -13,11 +13,19 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNULL: true,
         },
-        permission: {
-            type: DataTypes.INTEGER,
-            allowNULL: true,
+        role: {
+            type: DataTypes.STRING,
+            allowNULL: true, /**STUDENT IF NULL */
         },
     });
+
+
+    Users.associate = (models) => {
+        Users.hasMany(models.UserQuizScores, {
+            onDelete: "cascade",
+            });
+    
+    }
 
     
 

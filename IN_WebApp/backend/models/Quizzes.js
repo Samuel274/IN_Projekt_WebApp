@@ -1,11 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
 
     const Quizzes = sequelize.define("Quizzes", {
-        frage: {
+        question: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        antwort: {
+        optionA: {
+            type: DataTypes.STRING,
+            allowNULL: false,
+        },
+        optionB: {
+            type: DataTypes.STRING,
+            allowNULL: false,
+        },
+        optionC: {
+            type: DataTypes.STRING,
+            allowNULL: false,
+        },
+        optionD: {
+            type: DataTypes.STRING,
+            allowNULL: false,
+        },
+        answer: {
             type: DataTypes.STRING,
             allowNULL: false,
         },
@@ -14,6 +30,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNULL: false,
         }
     });
+
+    Quizzes.associate = (models) => {
+        Quizzes.hasMany(models.UserQuizScores, {
+            onDelete: "cascade",
+            });
+    
+    }
 
     return Quizzes;
 

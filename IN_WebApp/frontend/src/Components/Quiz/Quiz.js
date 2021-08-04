@@ -43,7 +43,12 @@ function Quiz() {
 
     return (
         <div className="Quiz">
-            {console.log(questions[currQuestion])}
+            {console.log(questions[currQuestion])};
+
+            {questions[0].answer}
+
+
+            {console.log([currQuestion].question)}
             <h1>{[currQuestion].question}</h1> {/**Shows the Question */}
             <div className="options">
                 <button className="quizButton" onClick={() => setOptionChosen("A")}>{[currQuestion].optionA} </button>

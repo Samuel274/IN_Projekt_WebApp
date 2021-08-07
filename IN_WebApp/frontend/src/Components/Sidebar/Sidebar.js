@@ -1,10 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import {SidebarData} from './SidebarData';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
+import axios from 'axios';
+import './sidebar.css';
 
 
 
 function Sidebar() {
+
+  
 
     const [authState, setAuthState] = useState(
         {
@@ -21,9 +25,12 @@ function Sidebar() {
           status: false});
       }; 
 
+    
+
 
     return (
         <div className="Sidebar__container">
+             
             <ul className="SidebarList">
             {SidebarData.map((val, key) => {
                 return (
@@ -40,6 +47,7 @@ function Sidebar() {
                 )
             })}
             </ul>
+
             <button onClick={logout}> <Link to="/" style={{ textDecoration: 'none' }}> LOGOUT </Link></button>
         </div>
     )

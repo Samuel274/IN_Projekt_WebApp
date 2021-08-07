@@ -6,6 +6,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 
 
+
 export const SidebarData = [
     {
         title: "Module",

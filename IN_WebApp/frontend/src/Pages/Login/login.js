@@ -29,28 +29,34 @@ function Login() {
     };
 
     return (
-        <div className="login">
-            Logo
-        <div className="loginContainer">
+        <div className="login__center">
+            
             <h1>Login</h1>
-            <label>Username: </label>
-            <input 
-            type="text" 
-            onChange={(event) => {
+            <form method="post">
+                <div className="txt_field">
+                    <input type="text" required onChange={(event) => {
                 setUsername(event.target.value);
-            }}
-            />
-            <label>Password:</label>
-            <input 
-            type= "password" 
-            onChange={(event) => {
+            }}/>
+                    <span></span>
+                    <label > Username </label>
+                </div>
+                <div className="txt_field">
+                <input type="password" required onChange={(event) => {
                 setPassword(event.target.value);
-            }}
+            }}/>
+                <span></span>
+                <label> Password </label>
+                </div>
+                <div className="pass">Forgot Password?</div>
                 
-            />
+            </form>
+            
+            <input type="submit" onClick={login} value="Login" />
+            <div className="signup_link">
+                    Not a member?
+                    <a href="/registration">Sign Up</a>
+                </div>
 
-            <button onClick={login} > Login </button>
-        </div>
         </div>
     )
 }

@@ -31,39 +31,40 @@ function Registration() {
 
 
     return (
-        <div className="registration">
-            LOGO
-        
-        <div className="registration__container">
+        <div className="registration__center">
             <h1>Registration</h1>
         <div>
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 <Form className="formContainer">
-                    <label>Username: </label>
-                    <ErrorMessage name="username" component="span" /> 
+                    <div className="txt_field_reg">
                     <Field 
-                    id="inputCreatePost" 
+                    className="inputData" 
                     name="username" 
-                    placeholder="(Ex. John123 ...)" 
+                    placeholder="wählen Sie einen Benutzernamen"
                     />
+                    <ErrorMessage name="username" component="span" /> 
+                    <span></span>
+                    <label>Username: </label>
+                    </div>
 
+                    <div className="txt_field_reg">
+                    <Field 
+                    className="inputData" 
+                    type="password"
+                    name="password"
+                    placeholder="Bitte fügen Sie ihr Passwort hinzu" 
+                    />
+                    <span></span>
                     <label>Password: </label>
                     <ErrorMessage name="password" component="span" /> 
-                    <Field 
-                    id="inputCreatePost" 
-                    type="password"
-                    name="password" 
-                    placeholder="(Your Password...)" 
-                    />
-
-
+                    </div>
                     <button type="submit"> Register </button>
                     
                 </Form>
             </Formik>
         </div>
         </div>
-         </div>
+       
     )
 }
 

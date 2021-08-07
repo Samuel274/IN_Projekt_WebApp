@@ -15,6 +15,9 @@ app.use("/users", usersRouter);
 const quizzesRouter = require('./routes/Quizzes')
 app.use("/quizzes", quizzesRouter)
 
+const modulesRouter = require('./routes/Modules')
+app.use("/modules", modulesRouter)
+
 
 
 

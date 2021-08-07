@@ -15,6 +15,9 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Header from './Components/Header/Header'
 import QuizApp from './Components/Quiz/QuizApp';
 import Quiz from './Components/Quiz/Quiz';
+import Profile from './Pages/Profile/Profile';
+import Dashboard_Page from './Pages/Dashboard_Page/Dashboard_Page';
+import Startseite from './Pages/Dashboard_Page/Dashboard_Components/Startseite';
 
 function App() {
 
@@ -84,6 +87,12 @@ function App() {
         <Route path="/modules/:id" exact component={Modules} />
         <Route path="/ranking" exact component={Ranking} />
         <Route path="/quiz" exact component={QuizApp} />
+        <Route path="/profile" exact component={Profile} />
+        <Route path="/sidebar" exact component={Sidebar} />
+        <Route path="/dashboard_page" exact component={Dashboard_Page} />
+        <Route path="/startseite" exact component={Startseite} />
+        <Route path="/modules" exact component={Modules} />
+
         </Fragment>
       </Switch>
 

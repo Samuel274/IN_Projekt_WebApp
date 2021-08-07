@@ -71,9 +71,7 @@ function Dashboard() {
                     </div>
                 </div>
                 <div className="sidebar">
-                    <div className="username">
-                        {username}
-                    </div>
+
                     <Sidebar />
                 </div> 
                 <div className="content_">

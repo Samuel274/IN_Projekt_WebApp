@@ -1,42 +1,75 @@
-.registration__container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.registration__center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 10px;
+  background: white;
+  border: 2px solid whitesmoke;
+}
+
+.registration__center h1{
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+
 }
 
 
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px;
-    height: auto;
-    padding: 20px;
-    border: 5px solid dodgerblue;
-    border-radius: 5px;
-  }
-  
-  .formContainer #inputCreatePost {
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid grey;
-    border-radius: 5px;
-    padding-left: 10px;
-    font-size: 20px;
-  }
-  
-  .formContainer button {
-    margin-top: 15px;
-    height: 40px;
-    border: none;
-    background-color: lightskyblue;
-    border-radius: 5px;
-    color: white;
-  }
-  
-  .formContainer button:hover {
-    cursor: pointer;
-    background-color: dodgerblue;
-  }
+.formContainer{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.formContainer .txt_field_reg{
+  position: relative;
+  margin: 30px 0;
+}
+
+.txt_field_reg .inputData{
+  width: 100%;
+  top: -30px;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  background-color: none;
+  outline: none;
+  border: none;
+}
+
+.txt_field_reg label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: grey;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.txt_field_reg span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: grey;
+  transition: .5s;
+}
+
+
+.txt_field_reg .inputData:focus ~ label,
+.txt_field_reg .inputData:valid ~ label
+{
+    top: -5px;
+    color: #2691d9;
+}
+.txt_field_reg .inputData:focus ~ span::before{
+    width: 100%;
+}
+
+
+

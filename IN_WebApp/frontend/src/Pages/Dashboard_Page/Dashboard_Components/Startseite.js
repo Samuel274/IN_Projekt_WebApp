@@ -1,14 +1,10 @@
-import React from 'react';
-import './modules.css';
-import QuizApp from '../../Components/Quiz/QuizApp';
-import Dashboard_Page from '../Dashboard_Page/Dashboard_Page';
+import React from 'react'
+import Dashboard_Page from '../Dashboard_Page'
 
-
-function modules() {
+function Startseite() {
     return (
         <Dashboard_Page>
-        <div className="module_container">
-            <h1>MODUL X</h1>
+            <h1>Startseite</h1>
             <hr />
             <p>
 
@@ -49,12 +45,11 @@ Donec quis arcu turpis. Donec sem nunc, viverra ut velit vitae, pretium tristiqu
 <br />
 Duis id nisl id neque consectetur placerat. Pellentesque convallis elementum eleifend. Etiam et rutrum dui. Nulla laoreet in nisl non pellentesque. Donec at aliquam arcu, vel semper orci. Mauris varius mollis molestie. Morbi quis porttitor nulla, vel congue libero. Ut lacinia dignissim ligula. Fusce id orci arcu. Sed gravida ultricies dui, sit amet porttitor dolor sollicitudin eget. Aliquam pellentesque sagittis nisi at laoreet. Sed molestie elit sed venenatis malesuada.
 
-</p> 
-        <QuizApp />
-        </div>
+</p>   
         </Dashboard_Page>
-        
     )
 }
 
-export default modules
+export default Startseite
+
+

@@ -11,9 +11,12 @@
 
 .registration__center h1{
   text-align: center;
-  padding: 0 0 20px 0;
-  border-bottom: 1px solid silver;
+}
 
+.registration__top{
+  display: flex;
+  border-bottom: 1px solid silver;
+  align-items: center;
 }
 
 
@@ -69,6 +72,21 @@
 }
 .txt_field_reg .inputData:focus ~ span::before{
     width: 100%;
+}
+
+.register__button{
+  font-size: 18px;
+  width: 80%;
+  margin-left: 10%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: whitesmoke;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
 }
 
 

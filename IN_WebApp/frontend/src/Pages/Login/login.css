@@ -26,9 +26,12 @@ body{
 
 .login__center h1{
     text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;
+}
 
+.login__top{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid silver;
 }
 
 .login__center form{

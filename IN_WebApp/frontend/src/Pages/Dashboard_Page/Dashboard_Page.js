@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState, useEffect } from "react";
 import Menubar from './Dashboard_Components/Menubar';
 import Sidebar from './Dashboard_Components/Sidebar';
 import './Dashboard_Page.css'
 import Startseite from './Dashboard_Components/Startseite';
 
 const Dashboard_Page = function({children}){
+
+
     return (
     <div className="dashboard_page">
         <div className="page__grid">
@@ -27,6 +30,7 @@ const Dashboard_Page = function({children}){
             Footer
         </div>
         </div>
+    
     </div>
     )
 }

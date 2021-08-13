@@ -48,7 +48,7 @@ function Sidebar() {
             })}
             </ul>
 
-            <button onClick={logout}> <Link to="/" style={{ textDecoration: 'none' }}> LOGOUT </Link></button>
+            <button className="logout__button" onClick={logout}> <Link to="/" style={{ textDecoration: 'none' }}> LOGOUT </Link></button>
         </div>
     )
 }

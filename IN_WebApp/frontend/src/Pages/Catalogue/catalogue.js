@@ -3,6 +3,7 @@ import React, {useState, useContext, useEffect} from 'react';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import './catalogue.css'
 import Dashboard_Page from '../Dashboard_Page/Dashboard_Page';
+import Module from '../../Components/Module/Module';
 
 
 function Catalogue() {
@@ -24,6 +25,18 @@ function Catalogue() {
         <Dashboard_Page>
         <div className="catalogue">
             <h1>KATALOG</h1>
+            <h2>HALLO</h2>
+                <div className="home__row">
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                </div>
+                <h2>Die neuesten Kurse:</h2>
+                <div className="home__row">
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                    <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                </div>
             {modulesList.map((value,key) => {
                 return (<div key={key} className="modul">
                 <div className="id">

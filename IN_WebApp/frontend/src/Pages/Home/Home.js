@@ -4,13 +4,9 @@ import { AuthContext} from "../../Auth/AuthContext";
 import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from 'axios';
-
-import Registration from '../Registration/Registration';
+import Module from '../../Components/Module/Module';
 import Login from '../Login/Login';
-import Dashboard from '../Dashboard/Dashboard';
-import PageNotFound from '../PageNotFound/PageNotFound';
-import Catalogue from '../Catalogue/Catalogue';
-import Modules from '../Modules/Modules';
+import Startseite from '../Dashboard_Page/Dashboard_Components/Startseite';
 
 function Home() {
  
@@ -58,22 +54,45 @@ function Home() {
     return (
         <div className="home__container">
           <div className="grid"> 
-            <div className="counter">Counter</div> 
-            <div className="content">Content</div>
+            <div className="counter"></div> 
+            <div className="content"> <h2>Die beliebtesten Kurse: </h2>
+              <div className="home__row">
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+              </div>
+              <h2>Die neuesten Kurse:</h2>
+              <div className="home__row">
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+              </div>
+            </div>
+              
             <div className="footer">Footer / Impressum</div>
         <AuthContext.Provider value={{ authState, setAuthState }}>             
                     {authState.status ? (
                          <>
                          <div className="title">
-                           LOGO
+                         <Link to="/">
+                            <img className="home__logo"
+                            src="https://pngimg.com/uploads/book/book_PNG51047.png" alt="logo"/>
+                          </Link>
                            <div className="title__logout">
-                             <Link to="/catalogue"> Katalog </Link>
-                             <Link to={`/dashboard/${id}`}> Dashboard </Link>  
-                             {authState.username} 
+                             <Link to={"/startseite/"}> Dashboard </Link>   
                              {authState.status && <button className="home__button" onClick={logout}> Logout</button>} 
                             </div>
                          </div>
-                         <div className="bannerLeft"></div>
+                         <div className="bannerLeft">
+                          <div className="bannerLeft__container">
+                          <h1>IN_PROJEKT </h1>
+                          <h2>Hallo {authState.username}!</h2>
+                            </div>
+                            </div>
+                            <div className="bannerRight">
+                          <img className="bannerRight__image" alt="backgroundIMG" src="http://pngimg.com/uploads/student/student_PNG62533.png" />
+                        </div>
+
 
                          </>
                   ) : (
@@ -84,17 +103,15 @@ function Home() {
                             <img className="home__logo"
                             src="https://pngimg.com/uploads/book/book_PNG51047.png" alt="logo"/>
                           </Link>
-                          <div className="home__dropdown">
-                            Kategorien
-                          </div>
+                         
                           <div className="home__search">
                               <input className="home__searchInput" type="text" placeholder="Suchen..." />
                          </div>
                         </div> 
                         <div className="bannerLeft">
                           <div className="bannerLeft__container">
-                          <h1>Willkommen bei ...</h1>
-                            <p>iuashdiuhasiduhasduoihasiodjoaisjd</p>
+                          <h1>Willkommen beim ...</h1>
+                            <p>IN_Projekt von Samuel Stein</p>
                             <div className="banner__buttons">
                             <Link to="/login"> <button className="home__button">Login</button></Link>
                             <Link to="/registration"><button className="home__button" >Registration</button></Link>
@@ -116,7 +133,7 @@ function Home() {
 
            <Switch>
            <Route path="/login" exact component={Login} />
-           <Route path="/dashboard/:id" exact component={Dashboard} />
+           <Route path="/startseite" exact component={Startseite} />
                
             </Switch>     
 

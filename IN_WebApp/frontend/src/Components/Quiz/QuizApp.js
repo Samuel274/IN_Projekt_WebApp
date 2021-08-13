@@ -12,7 +12,7 @@ function QuizApp() {
 
     return (
         <div className="QuizApp">
-            <h1>Quiz App</h1>
+            <h1>Quiz zum Modul</h1>
             <QuizContext.Provider value={{gameState, setGameState, score, setScore}}>
                 {gameState === "menu" && <MainMenu />}
                 {gameState === "quiz" && <Quiz />}

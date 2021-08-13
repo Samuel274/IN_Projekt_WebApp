@@ -12,7 +12,7 @@ function MainMenu() {
         <div className="Menu">
 
 
-          <button className="quizButton" onClick={() => {setGameState("quiz")}}>Start Quiz</button>  {/**Change State to Quiz after pressing the button */}
+          <button className="quizButton" onClick={() => {setGameState("quiz")}}>Quiz starten!</button>  {/**Change State to Quiz after pressing the button */}
 
         </div>
     )

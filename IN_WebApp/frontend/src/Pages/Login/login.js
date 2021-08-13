@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
-import {useParams ,useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import { AuthContext} from "../../Auth/AuthContext";
 import './login.css';
 
@@ -23,15 +23,20 @@ function Login() {
             } else {
                 localStorage.setItem("accessToken", response.data.token);
                 setAuthState({username: response.data.username, id: response.data.id, status: true});
-                history.push(`/dashboard/${response.data.id}`); /* Redirect after sucessful login*/
+                history.push("/startseite"); /* Redirect after sucessful login*/
             }
         });
     };
 
     return (
         <div className="login__center">
-            
-            <h1>Login</h1>
+            <div className="login__top">
+                <Link to="/">
+                            <img className="home__logo"
+                            src="https://pngimg.com/uploads/book/book_PNG51047.png" alt="logo"/>
+                          </Link>
+                <h1>Login</h1>
+            </div>
             <form method="post">
                 <div className="txt_field">
                     <input type="text" required onChange={(event) => {

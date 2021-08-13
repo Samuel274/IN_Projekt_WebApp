@@ -1,8 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useHistory } from 'react-router-dom';
 import './sidebar.css'
 import {SidebarData} from './SidebarData';
 
 function Sidebar() {
+
+    let history = useHistory();
+
+    const [authState, setAuthState] = useState(
+        {
+        username: "", 
+        id: 0, 
+        status: false,
+      });
+
+    const logout = () => {
+        localStorage.removeItem("accessToken");
+        setAuthState({
+          username: "", 
+          id: 0, 
+          status: false});
+
+          history.push("/");
+      };
     return (
         <div className="sidebar">
 
@@ -28,7 +48,7 @@ function Sidebar() {
                  )
              })}
              </ul>
- 
+             <button className="logout__button" onClick={logout}> Logout</button>
             </div>
          </div>
        

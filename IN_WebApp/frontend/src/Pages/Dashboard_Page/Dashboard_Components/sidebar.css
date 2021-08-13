@@ -28,10 +28,26 @@
     background-color: #F8F9FA;
 }
 
+.logout__button{
+    background-color: grey;
+    margin-top: -110px;
+    margin-right: 40px;
+    font-size: 20px;
+    
+}
+
+.logout__button:hover{
+    background-color: red;
+}
+
 
 @media screen and (min-width: 736px){
 
-
+.logout__button{
+    background-color: grey;
+    margin-top: 50px;
+    font-size: 20px;
+}
 .sidebar__container{
     height: 100vh;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import axios from 'axios';
 import './registration.css';
@@ -17,7 +18,7 @@ function Registration() {
         axios.post("http://localhost:3001/users/registration", data).then(() => {
             console.log(data);
         })
-
+        history.push("/login");
     };
 
     const validationSchema =  Yup.object().shape({
@@ -25,14 +26,15 @@ function Registration() {
         password: Yup.string().min(4).max(20).required(),
     });
 
-    const backToLogin = () => {
-        history.push("/login");
-    }
-
-
     return (
         <div className="registration__center">
+            <div className="registration__top">
+            <Link to="/">
+                            <img className="home__logo"
+                            src="https://pngimg.com/uploads/book/book_PNG51047.png" alt="logo"/>
+                          </Link>
             <h1>Registration</h1>
+            </div>
         <div>
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                 <Form className="formContainer">
@@ -58,7 +60,7 @@ function Registration() {
                     <label>Password: </label>
                     <ErrorMessage name="password" component="span" /> 
                     </div>
-                    <button type="submit"> Register </button>
+                    <button className="register__button" type="submit"> Registrieren </button>
                     
                 </Form>
             </Formik>

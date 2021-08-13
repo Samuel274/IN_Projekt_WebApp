@@ -16,7 +16,7 @@
     width: 500px;
     height: 500px;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: #00587A;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,13 +43,27 @@
   
   button:hover {
     cursor: pointer;
+    background-color: #008891;
+  }
+  button:focus {
+    cursor: pointer;
+    background-color: #008891;
+  }
+
+  .nextQuestion{
+    margin-top: 20px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
   }
   
   .Quiz {
     width: 500px;
     height: 500px;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: #00587A;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +78,7 @@
     width: 500px;
     height: 500px;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: #00587A;
     display: flex;
     flex-direction: column;
     justify-content: center;

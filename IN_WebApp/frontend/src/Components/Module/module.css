@@ -1,0 +1,41 @@
+.module {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    z-index: 1;
+
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    max-height: 400px;
+    min-width: 100px;
+
+    border: 1px solid;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 1px 5px 0px #676767;
+    -webkit-box-shadow: 0px 1px 5px 0px #676767;
+    box-shadow: 0px 1px 5px 0px #676767;
+
+}
+
+.module__rating {
+    display: flex;
+}
+
+.module__info{
+    margin-top: 5px;
+}
+
+.module:hover{
+    cursor: pointer;
+}
+
+.module > img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+}

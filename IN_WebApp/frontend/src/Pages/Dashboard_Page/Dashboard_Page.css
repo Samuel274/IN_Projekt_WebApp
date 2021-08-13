@@ -62,7 +62,8 @@ body{
 
 .page__footer{
     grid-area: page__footer;
-    background-color: cornflowerblue;     
+    color: white;
+    background-color: #00587A;     
 }
 
 @media screen and (min-width: 736px){

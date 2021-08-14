@@ -1,15 +1,27 @@
 .sidebar__container{
-    height: 50px;
+    height: 100%;
+    display: flex;
 }
 
 .SidebarList{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     height: auto;
     padding: 0;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.icon{
+background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  top: 0;
+  color: white;
+
 }
 
 .SidebarList .row{
@@ -17,10 +29,11 @@
     height: 100%;
     list-style-type: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: black;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
+    padding: 10px;
 }
 
 .SidebarList .row:hover{
@@ -30,10 +43,10 @@
 
 .logout__button{
     background-color: grey;
-    margin-top: -110px;
-    margin-right: 40px;
     font-size: 20px;
-    
+    margin-left: auto;
+    margin-top: 15px;
+    height: 30px;   
 }
 
 .logout__button:hover{
@@ -50,6 +63,7 @@
 }
 .sidebar__container{
     height: 100vh;
+    display: contents;
 }
 
 .sidebar__title{
@@ -73,6 +87,7 @@
     color: black;
     align-items: center;
     justify-content: center;
+    padding: 0px;
 }
 
 .row #icon{

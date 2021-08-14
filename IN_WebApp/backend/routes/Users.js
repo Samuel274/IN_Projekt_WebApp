@@ -15,6 +15,7 @@ router.post('/registration', async (req, res) => {
             Users.create({
                 username: username,
                 password: hash,
+                role: "Student",
         });
         console.log("SUCCESS");
     }); 
@@ -39,12 +40,23 @@ router.post("/login", async (req, res) => {
       if (!match) res.json({ error: "Die Kombination aus Benutzername und Passwort ist falsch!" });
   
       const accessToken = sign(
-        { username: user.username, id: user.id },
+        { username: user.username, id: user.id, role: user.role },
         "importantsecret" /**Random generierten String verwenden => mehr sicherheit */
       );
-      res.json({ token: accessToken, username: username, id: user.id });
+      res.json({ token: accessToken, username: username, id: user.id, role: user.role });
     });
   });
+
+  router.delete("/delete/:username", async (req, res) => {
+    const username = req.params.username;
+  
+    await Users.destroy({
+        where: {
+            username: username,
+        },
+    });
+    res.json(req.params.username);
+   });
 
   router.get('/auth', validateToken, (req, res) => {
     res.json(req.user);
@@ -90,6 +102,20 @@ router.put('/changepassword', validateToken, async (req, res) => {
         });
         }
     });
+
+});
+
+router.put('/changerole', async (req, res) => {
+    const {username, role}  = req.body
+
+    await Users.findOne({
+        where: { username: username }
+    })
+
+    await Users.update({role: role}, {where: {
+        username: username
+    }})
+    res.json("hallo")
 
 });
 

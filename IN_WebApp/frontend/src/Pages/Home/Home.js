@@ -15,9 +15,11 @@ function Home() {
         username: "", 
         id: 0, 
         status: false,
+        role: "",
       });
 
     const [id, setId] = useState();
+    const [role, setRole] = useState("");
 
 
     useEffect(() => {
@@ -35,8 +37,10 @@ function Home() {
                 username: response.data.username, 
                 id: response.data.id, 
                 status: true,
+                role: response.data.role,
               });
               setId(response.data.id);
+              setRole(response.data.role);
             };
           });
         };
@@ -57,13 +61,13 @@ function Home() {
             <div className="counter"></div> 
             <div className="content"> <h2>Die beliebtesten Kurse: </h2>
               <div className="home__row">
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='HTML5' beschreibung={"HTML für Einsteiger um eine Webapplikation zu gestalten!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/html5/html5-original.svg' rating={4}/>
+                <Module id="1" title='CSS3' beschreibung={"Lerne heute noch das Designen mit CSS!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/css3/css3-original.svg' rating={5}/>
+                <Module id="1" title='React' beschreibung={"React biete neue Möglichkeiten um das Programmieren von einer Webapplikation zu vereinfachen!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/react/react-original.svg' rating={5}/>
               </div>
               <h2>Die neuesten Kurse:</h2>
               <div className="home__row">
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={4}/>
                 <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
                 <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
               </div>
@@ -85,7 +89,7 @@ function Home() {
                          </div>
                          <div className="bannerLeft">
                           <div className="bannerLeft__container">
-                          <h1>IN_PROJEKT </h1>
+                          <h1>IN_PROJEKT</h1>
                           <h2>Hallo {authState.username}!</h2>
                             </div>
                             </div>

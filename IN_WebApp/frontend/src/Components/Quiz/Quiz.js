@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function Quiz() {
 
-    const {score, setScore, setGameState} = useContext(QuizContext); //Score (richtige Antworten) 
+    const {score, setScore, counter, setCounter, setGameState} = useContext(QuizContext); //Score (richtige Antworten) 
 
     const [questions, setQuestions] = useState([]);
     const [currQuestion, setCurrQuestion] = useState(0); //Start with first Question Index 0 
@@ -45,7 +45,7 @@ function Quiz() {
                 <button className="quizButton" onClick={() => setOptionChosen("C")}>{questions[currQuestion]?.optionC} </button>
                 <button className="quizButton" onClick={() => setOptionChosen("D")}>{questions[currQuestion]?.optionD} </button>
             </div>
-
+            {setCounter(questions.length)}
             {currQuestion == questions.length - 1 ? (
                 <button className="nextQuestion"onClick={finishQuiz}> Quiz beenden </button>
             ) : (

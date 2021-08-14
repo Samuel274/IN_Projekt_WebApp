@@ -41,11 +41,11 @@
     font-size: 20px;
   }
   
-  button:hover {
+  .quizButton:hover {
     cursor: pointer;
     background-color: #008891;
   }
-  button:focus {
+  .quizButton:focus {
     cursor: pointer;
     background-color: #008891;
   }

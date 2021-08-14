@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import axios from 'axios';
 import Dashboard_Page from '../Dashboard_Page/Dashboard_Page'
 import { AuthContext} from "../../Auth/AuthContext";
@@ -9,6 +10,9 @@ function Profile() {
 
     const [oldPassword, setOldPassword] = useState("")
     const [newPassword, setNewPassword] = useState("")
+    
+
+    let history = useHistory();
 
     const [authState, setAuthState] = useState(
         {
@@ -36,6 +40,21 @@ function Profile() {
         });
         ;
 
+    }
+
+    const deleteAccount = () => {
+        const username = authState.username;
+        console.log("Username " + username)
+        axios.delete(`http://localhost:3001/users/delete/${username}`,).then(() => {
+          history.push("/");
+        localStorage.removeItem("accessToken");
+        setAuthState({
+          username: "", 
+          id: 0, 
+          status: false,
+          role: "",
+        });
+    })
     }
 
     useEffect(() => {
@@ -75,7 +94,7 @@ function Profile() {
         </div>
 
         <div className="delete__account">
-            Delete Account
+            <button onClick={deleteAccount}>DELTE</button>
         </div>
         </Dashboard_Page>
     )

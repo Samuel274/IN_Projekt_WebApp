@@ -21,6 +21,10 @@
 
 }
 
+.module__title{
+    font-size: 20px;
+}
+
 .module__rating {
     display: flex;
 }
@@ -38,4 +42,13 @@
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
+}
+.module__beschreibung{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    text-align: center;
 }

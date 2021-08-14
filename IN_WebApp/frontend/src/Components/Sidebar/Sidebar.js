@@ -2,12 +2,14 @@ import React, { useState, useEffect} from 'react';
 import {SidebarData} from './SidebarData';
 import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext} from "../../Auth/AuthContext";
 import './sidebar.css';
 
 
 
 function Sidebar() {
 
+    const [id, setId] = useState();
   
 
     const [authState, setAuthState] = useState(
@@ -22,15 +24,39 @@ function Sidebar() {
         setAuthState({
           username: "", 
           id: 0, 
-          status: false});
+          status: false,
+          role: "",
+        });
       }; 
 
+
+      useEffect(() => {
+        if (localStorage.getItem('accessToken')) {
+          axios.get('http://localhost:3001/users/auth', 
+          {headers: {
+            accessToken: localStorage.getItem('accessToken'),
+          },
+        })
+        .then((response) => {
+            if(response.data.error){
+              setAuthState({...authState, status: false}); /*Only change Status */
+            } else {
+              setAuthState({
+                username: response.data.username, 
+                id: response.data.id, 
+                status: true,
+                role: response.data.role,
+              });
+              setId(response.data.id);
+            };
+          });
+        };
+      }, []); 
     
 
 
     return (
         <div className="Sidebar__container">
-             
             <ul className="SidebarList">
             {SidebarData.map((val, key) => {
                 return (
@@ -48,7 +74,10 @@ function Sidebar() {
             })}
             </ul>
 
-            <button className="logout__button" onClick={logout}> <Link to="/" style={{ textDecoration: 'none' }}> LOGOUT </Link></button>
+            Hallo
+            {authState.username}
+
+            <button className="logout__button" onClick={logout}> <Link to="/" style={{ textDecoration: 'none' }}> LOGOUT X </Link></button>
         </div>
     )
 }

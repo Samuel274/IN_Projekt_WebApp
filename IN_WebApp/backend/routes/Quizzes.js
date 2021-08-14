@@ -13,4 +13,22 @@ router.get("/info/:id", async (req, res) => {
     res.json(info);
 });
 
+router.post("/quizcreate", async (req, res) => {
+    const {question, optionA, optionB, optionC, optionD, answer, score, ModuleId} = req.body;
+
+    Quizzes.create({
+        question: question,
+        optionA: optionA,
+        optionB: optionB,
+        optionC: optionC,
+        optionD: optionD,
+        answer: answer,
+        score: score,
+        ModuleId: ModuleId,
+    });
+    console.log("Success");
+
+
+})
+
 module.exports = router;

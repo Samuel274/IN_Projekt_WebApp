@@ -18,6 +18,8 @@ import Quiz from './Components/Quiz/Quiz';
 import Profile from './Pages/Profile/Profile';
 import Dashboard_Page from './Pages/Dashboard_Page/Dashboard_Page';
 import Startseite from './Pages/Dashboard_Page/Dashboard_Components/Startseite';
+import Quizerstellen from './Pages/Quiz_erstellen/Quizerstellen';
+import Userverwalten from './Pages/User_verwalten/Userverwalten';
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
     username: "", 
     id: 0, 
     status: false,
+    role: "",
   });
 
 
@@ -47,6 +50,7 @@ function App() {
             username: response.data.username, 
             id: response.data.id, 
             status: true,
+            role: response.data.role,
           });
         };
       });
@@ -63,7 +67,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      {console.log(authState.role)}
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
         
@@ -92,6 +96,8 @@ function App() {
         <Route path="/dashboard_page" exact component={Dashboard_Page} />
         <Route path="/startseite" exact component={Startseite} />
         <Route path="/modules" exact component={Modules} />
+        <Route path="/quizerstellen" exact component={Quizerstellen} />
+        <Route path="/userverwalten" exact component={Userverwalten} />
 
         </Fragment>
       </Switch>

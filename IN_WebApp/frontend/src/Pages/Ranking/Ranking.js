@@ -1,8 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import { AuthContext} from "../../Auth/AuthContext";
-import Sidebar from '../../Components/Sidebar/Sidebar';
-import Header from '../../Components/Header/Header';
 import './ranking.css';
 import Dashboard_Page from '../Dashboard_Page/Dashboard_Page'
 

@@ -43,7 +43,7 @@
 }
 
 .title__logout button{
-    background-color: grey;
+    background-color: lightgray;
     justify-content: right;
     font-size: 20px;
 }

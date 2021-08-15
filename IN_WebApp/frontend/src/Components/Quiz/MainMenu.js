@@ -4,7 +4,7 @@ import "./quiz.css";
 
 function MainMenu() {
 
-    const {gameState, setGameState} = useContext(QuizContext)
+    const {setGameState} = useContext(QuizContext)
 
 
 

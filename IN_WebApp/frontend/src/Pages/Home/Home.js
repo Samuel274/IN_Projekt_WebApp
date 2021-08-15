@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.css';
 import { AuthContext} from "../../Auth/AuthContext";
-import {BrowserRouter as Router, Route, Switch, Link, useHistory} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Module from '../../Components/Module/Module';
@@ -18,8 +18,7 @@ function Home() {
         role: "",
       });
 
-    const [id, setId] = useState();
-    const [role, setRole] = useState("");
+    
 
 
     useEffect(() => {
@@ -39,8 +38,7 @@ function Home() {
                 status: true,
                 role: response.data.role,
               });
-              setId(response.data.id);
-              setRole(response.data.role);
+            
             };
           });
         };
@@ -67,9 +65,9 @@ function Home() {
               </div>
               <h2>Die neuesten Kurse:</h2>
               <div className="home__row">
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={4}/>
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
-                <Module id="1" title='Apple' price={29.99} image='https://pngimg.com/uploads/apple_logo/apple_logo_PNG19683.png' rating={5}/>
+              <Module id="1" title='HTML5' beschreibung={"HTML für Einsteiger um eine Webapplikation zu gestalten!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/html5/html5-original.svg' rating={4}/>
+              <Module id="1" title='CSS3' beschreibung={"Lerne heute noch das Designen mit CSS!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/css3/css3-original.svg' rating={5}/>
+              <Module id="1" title='React' beschreibung={"React biete neue Möglichkeiten um das Programmieren von einer Webapplikation zu vereinfachen!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/react/react-original.svg' rating={5}/>
               </div>
             </div>
               

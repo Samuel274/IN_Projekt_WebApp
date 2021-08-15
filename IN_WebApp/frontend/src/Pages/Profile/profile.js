@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import axios from 'axios';
 import Dashboard_Page from '../Dashboard_Page/Dashboard_Page'
-import { AuthContext} from "../../Auth/AuthContext";
+
 import './profile.css'
 
 

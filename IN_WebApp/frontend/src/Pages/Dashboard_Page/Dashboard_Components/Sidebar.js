@@ -5,8 +5,6 @@ import {SidebarData} from './SidebarData';
 import axios from 'axios';
 import { SidebarDataLehrer } from './SidebarDataLehrer';
 import { SidebarDataAdmin } from './SidebarDataAdmin';
-import DehazeIcon from '@material-ui/icons/Dehaze';
-import { green } from '@material-ui/core/colors';
 
 function Sidebar() {
 
@@ -69,7 +67,7 @@ function Sidebar() {
                  return (
                      <li key={key} 
                      className="row"
-                     id={window.location.pathname == val.link ? "active" : ""} 
+                     id={window.location.pathname === val.link ? "active" : ""} 
                      onClick={() => 
                          {window.location.pathname = val.link;
                          }}
@@ -87,7 +85,7 @@ function Sidebar() {
                     return (
                         <li key={key} 
                         className="row"
-                        id={window.location.pathname == val.link ? "active" : ""} 
+                        id={window.location.pathname === val.link ? "active" : ""} 
                         onClick={() => 
                             {window.location.pathname = val.link;
                             }}
@@ -108,7 +106,7 @@ function Sidebar() {
                     return (
                         <li key={key} 
                         className="row"
-                        id={window.location.pathname == val.link ? "active" : ""} 
+                        id={window.location.pathname === val.link ? "active" : ""} 
                         onClick={() => 
                             {window.location.pathname = val.link;
                             }}

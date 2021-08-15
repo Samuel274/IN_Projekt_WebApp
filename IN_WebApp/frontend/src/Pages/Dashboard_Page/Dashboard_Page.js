@@ -1,9 +1,8 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Menubar from './Dashboard_Components/Menubar';
 import Sidebar from './Dashboard_Components/Sidebar';
 import './Dashboard_Page.css'
-import Startseite from './Dashboard_Components/Startseite';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const Dashboard_Page = function({children}){

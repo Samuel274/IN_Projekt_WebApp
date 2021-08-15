@@ -69,7 +69,7 @@ function Sidebar() {
                      className="row"
                      id={window.location.pathname === val.link ? "active" : ""} 
                      onClick={() => 
-                         {window.location.pathname = val.link;
+                         {history.push(val.link)
                          }}
                      > 
                      <div id="icon">{val.icon}</div> 
@@ -87,7 +87,7 @@ function Sidebar() {
                         className="row"
                         id={window.location.pathname === val.link ? "active" : ""} 
                         onClick={() => 
-                            {window.location.pathname = val.link;
+                            {history.push(val.link)
                             }}
                         > 
                         <div id="icon">{val.icon}</div> 
@@ -108,7 +108,7 @@ function Sidebar() {
                         className="row"
                         id={window.location.pathname === val.link ? "active" : ""} 
                         onClick={() => 
-                            {window.location.pathname = val.link;
+                            {history.push(val.link)
                             }}
                         > 
                         <div id="icon">{val.icon}</div> 

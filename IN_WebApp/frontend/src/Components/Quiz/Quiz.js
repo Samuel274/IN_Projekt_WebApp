@@ -7,15 +7,13 @@ function Quiz() {
     const {score, setScore, setCounter, setGameState} = useContext(QuizContext); //Score (richtige Antworten) 
 
     const [questions, setQuestions] = useState([]);
-    const [currQuestion, setCurrQuestion] = useState(0); //Start with first Question Index 0 
+    const [currQuestion, setCurrQuestion] = useState(0); //Mit der ersten Frage starten
     const [optionChosen, setOptionChosen] = useState(""); //Hier wird die gewählte Option vom User gespeichert    
 
-//    const {id} = useParams(); info/1 soll später durch die info/ThemenId ersetzt werden
-
     useEffect(() => {
-        axios.get(`http://localhost:3001/quizzes/info/1`) // Info 1 gibt alle Fragen des Themas 1 aus 
+        axios.get(`http://62.171.138.202:3001/quizzes/info/1`) // Info 1 gibt alle Fragen des Themas 1 aus 
         .then((response) =>{
-            setQuestions(response.data); // Funktioniert 
+            setQuestions(response.data); 
             console.log(response.data)
     });
 }, []);
@@ -25,7 +23,7 @@ function Quiz() {
             setScore(score + 1);
         }
 
-    setCurrQuestion(currQuestion + 1); // Greift auf nächste Frage im questions-Array zu
+    setCurrQuestion(currQuestion + 1); // Greift auf nächste Frage im Questions-Array zu
     };
 
     const finishQuiz = () => {
@@ -38,6 +36,7 @@ function Quiz() {
     return (
         <div className="Quiz">
 
+            {/**Auswahl der Antworten */}
             <h1>{questions[currQuestion]?.question}</h1> 
             <div className="options">
                 <button className="quizButton" onClick={() => setOptionChosen("A")}>{questions[currQuestion]?.optionA} </button>

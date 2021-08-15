@@ -8,6 +8,9 @@ function PageNotFound() {
                 PAGE NOT FOUND 404
             </h1>
             <h2>Sind Sie angemeldet?</h2>
+            <a href="/registration">Registrieren</a>
+            <h2>Anmelden:</h2>
+            <a href="/login">Login</a>
         </div>
     )
 }

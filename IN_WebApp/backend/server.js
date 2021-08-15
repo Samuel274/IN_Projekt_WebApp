@@ -8,7 +8,6 @@ app.use(cors());
 const db = require('./models')
 
 // Routers
-
 const usersRouter = require('./routes/Users')
 app.use("/users", usersRouter);
 

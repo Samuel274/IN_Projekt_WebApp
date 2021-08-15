@@ -9,7 +9,7 @@ function Ranking() {
 
 
     useEffect(() => {
-        axios.get("http://62.171.138.202:3001/users/ranking", { headers: { accessToken: localStorage.getItem("accessToken")},
+        axios.get("http://62.171.138.202:3001/users/ranking", { headers: { accessToken: localStorage.getItem("accessToken")}, /**Top 10 User mit den meisten Punkten über Get-Request empfangen */
         })
         .then((response) => {
             setListOfRanking(response.data);
@@ -22,6 +22,7 @@ function Ranking() {
         <Dashboard_Page>
         <div className="ranking">
         <div className="ranking__content">
+            {/**Tabelle mit den Top 10 Usern mit den meisten Punkten rendern */}
             <h1>Ranking:</h1>
             <table>
                 <thead>

@@ -39,7 +39,7 @@ function Sidebar() {
         })
         .then((response) => {
             if(response.data.error){
-              setAuthState({...authState, status: false}); /*Only change Status */
+              setAuthState({...authState, status: false}); /* Ändert nur den Status */
             } else {
               setAuthState({
                 username: response.data.username, 
@@ -63,13 +63,13 @@ function Sidebar() {
 
              {authState.role === "Student" ? (    
              <ul className="SidebarList">
-             {SidebarData.map((val, key) => {
+             {SidebarData.map((val, key) => {         /**Liest alle Unterseiten aus SidebarData.js */
                  return (
                      <li key={key} 
                      className="row"
                      id={window.location.pathname === val.link ? "active" : ""} 
                      onClick={() => 
-                         {history.push(val.link)
+                         {history.push(val.link)      /**Wechselt die Content zur ausgewählten Unterseite */
                          }}
                      > 
                      <div id="icon">{val.icon}</div> 
@@ -81,7 +81,7 @@ function Sidebar() {
              ) : (<div></div> )}
             {(authState.role === "Lehrer") ? (
                 <ul className="SidebarList">
-                {SidebarDataLehrer.map((val, key) => {
+                {SidebarDataLehrer.map((val, key) => {    /**Liest alle Unterseiten aus SidebarDataLehrer.js */
                     return (
                         <li key={key} 
                         className="row"
@@ -102,13 +102,13 @@ function Sidebar() {
 
             {(authState.role === "Admin") ? (
                 <ul className="SidebarList">
-                {SidebarDataAdmin.map((val, key) => {
+                {SidebarDataAdmin.map((val, key) => { /**Liest alle Unterseiten aus SidebarDataAdmin.js */
                     return (
                         <li key={key} 
                         className="row"
                         id={window.location.pathname === val.link ? "active" : ""} 
                         onClick={() => 
-                            {history.push(val.link)
+                            {history.push(val.link) /**Wechselt die Content zur ausgewählten Unterseite */
                             }}
                         > 
                         <div id="icon">{val.icon}</div> 

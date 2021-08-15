@@ -14,7 +14,7 @@ const Dashboard_Page = function({children}){
         <div className="page__grid">
             <div className="page__header">
                 <Menubar />
-                <button className="page__burgermenu" onClick={()=>setShow(!show)}> <MenuIcon /> </button>
+                <button className="page__burgermenu" onClick={()=>setShow(!show)}> <MenuIcon /> </button> {/**Wechselt ShowStatus beim Klicken */}
             </div>
             <div className="page__title">
                
@@ -23,7 +23,7 @@ const Dashboard_Page = function({children}){
         <div className="page__center"> 
             <div className="page__sidebar">
                 {
-                    show?<Sidebar />:null
+                    show?<Sidebar />:null       /**Falls showState false ist, wird die Sidebar nicht angezeigt */
                 }
                 
             </div>

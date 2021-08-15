@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const {validateToken} = require("../middlewares/AuthMiddleware");
 const {sign} = require('jsonwebtoken');
 
+/**Speichert den Nutzer in der Usertabelle*/
 router.post('/registration', async (req, res) => {
     const {username, password} = req.body;
 
@@ -24,11 +25,12 @@ router.post('/registration', async (req, res) => {
     }
 });
 
-
+/**Gibt alle vorhandenen User aus */
 router.get('/users', validateToken, (req, res) => {
     res.json(req.user);
 });
 
+/**Login des Nutzers*/
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
   
@@ -47,6 +49,7 @@ router.post("/login", async (req, res) => {
     });
   });
 
+  /**Nutzer löschen*/
   router.delete("/delete/:username", async (req, res) => {
     const username = req.params.username;
   
@@ -58,10 +61,12 @@ router.post("/login", async (req, res) => {
     res.json(req.params.username);
    });
 
+  /**Nutzer authentifizieren*/
   router.get('/auth', validateToken, (req, res) => {
     res.json(req.user);
 });
 
+/**Nutzerinfo nach Id abfragen*/
 router.get("/basicinfo/:id", async (req, res) => {
     const id = req.params.id;
 
@@ -71,6 +76,7 @@ router.get("/basicinfo/:id", async (req, res) => {
    res.json(basicInfo);
 });
 
+/**Gibt die Top 10 Nutzer mit den meisten Punkten aus*/
 router.get("/ranking", async (req, res) => {
     const { username, score } = req.body;
     
@@ -83,6 +89,7 @@ router.get("/ranking", async (req, res) => {
     res.json(scores);
 })
 
+/**Nutzerpasswort ändern */
 router.put('/changepassword', validateToken, async (req, res) => {
     const {oldPassword, newPassword}  = req.body
 
@@ -90,7 +97,7 @@ router.put('/changepassword', validateToken, async (req, res) => {
         where: { username: req.user.username }
     })
 
-    bcrypt.compare(oldPassword, user.password).then(async (match) => {
+    bcrypt.compare(oldPassword, user.password).then(async (match) => { /**Vergleicht altes Passwort mit Eingabe */
 
         if (!match) res.json({error: "Wrong Password Entered!"});
 
@@ -105,6 +112,8 @@ router.put('/changepassword', validateToken, async (req, res) => {
 
 });
 
+
+/**Nutzerberechtigung ändern*/
 router.put('/changerole', async (req, res) => {
     const {username, role}  = req.body
 

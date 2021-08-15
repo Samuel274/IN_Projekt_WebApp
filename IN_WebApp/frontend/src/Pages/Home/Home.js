@@ -25,12 +25,12 @@ function Home() {
         if (localStorage.getItem('accessToken')) {
           axios.get('http://62.171.138.202:3001/users/auth', 
           {headers: {
-            accessToken: localStorage.getItem('accessToken'),
+            accessToken: localStorage.getItem('accessToken'), /**AccessToken wird im Header mitgeliefert */
           },
         })
         .then((response) => {
             if(response.data.error){
-              setAuthState({...authState, status: false}); /*Only change Status */
+              setAuthState({...authState, status: false}); /*Wechselt den Status zu false */
             } else {
               setAuthState({
                 username: response.data.username, 
@@ -44,7 +44,7 @@ function Home() {
         };
       }, []);  
  
-      const logout = () => {
+      const logout = () => {                    /**Setzt den AuthState des Nutzers zurück und loggt ihn somit aus */
         localStorage.removeItem("accessToken");
         setAuthState({
           username: "", 
@@ -59,6 +59,7 @@ function Home() {
             <div className="counter"></div> 
             <div className="content"> <h2>Die beliebtesten Kurse: </h2>
               <div className="home__row">
+                {/**Module involvieren über Probs */}
                 <Module id="1" title='HTML5' beschreibung={"HTML für Einsteiger um eine Webapplikation zu gestalten!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/html5/html5-original.svg' rating={4}/>
                 <Module id="1" title='CSS3' beschreibung={"Lerne heute noch das Designen mit CSS!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/css3/css3-original.svg' rating={5}/>
                 <Module id="1" title='React' beschreibung={"React biete neue Möglichkeiten um das Programmieren von einer Webapplikation zu vereinfachen!"} image='https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/react/react-original.svg' rating={5}/>

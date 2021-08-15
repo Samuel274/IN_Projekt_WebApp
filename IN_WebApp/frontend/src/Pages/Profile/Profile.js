@@ -47,7 +47,7 @@ function Profile() {
     const deleteAccount = () => {
         const username = authState.username;
         console.log("Username " + username)
-        axios.delete(`http://62.171.138.202:3001/users/delete/${username}`,).then(() => {
+        axios.delete(`http://62.171.138.202:3001/users/delete/${username}`,).then(() => {     /**Delete Anfrage an die Usertabelle */
           history.push("/");
           window.alert("Dein Account wurde gelöscht!!");
         localStorage.removeItem("accessToken");
@@ -60,7 +60,7 @@ function Profile() {
     })
     }
 
-    useEffect(() => {
+    useEffect(() => {                                   {/**Lädt den accessToken des Users */}
         if (localStorage.getItem('accessToken')) {
           axios.get('http://62.171.138.202:3001/users/auth', 
           {headers: {

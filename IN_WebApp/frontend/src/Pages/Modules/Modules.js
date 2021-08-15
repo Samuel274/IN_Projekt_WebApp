@@ -8,7 +8,8 @@ function modules() {
     return (
         <Dashboard_Page>
         <div className="module_container">
-            <h1>MODUL X</h1>
+            {/** Text des ersten Moduls*/}
+            <h1>MODUL 1</h1>
             <hr />
             <p>
 
@@ -50,7 +51,7 @@ Donec quis arcu turpis. Donec sem nunc, viverra ut velit vitae, pretium tristiqu
 Duis id nisl id neque consectetur placerat. Pellentesque convallis elementum eleifend. Etiam et rutrum dui. Nulla laoreet in nisl non pellentesque. Donec at aliquam arcu, vel semper orci. Mauris varius mollis molestie. Morbi quis porttitor nulla, vel congue libero. Ut lacinia dignissim ligula. Fusce id orci arcu. Sed gravida ultricies dui, sit amet porttitor dolor sollicitudin eget. Aliquam pellentesque sagittis nisi at laoreet. Sed molestie elit sed venenatis malesuada.
 
 </p> 
-        <QuizApp />
+        <QuizApp />         {/**Rendern der QuizApp */}
         </div>
         </Dashboard_Page>
         

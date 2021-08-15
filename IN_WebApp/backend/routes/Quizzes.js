@@ -3,6 +3,8 @@ const router = express.Router();
 
 const { Quizzes, sequelize } = require('../models');
 
+
+/**Gibt alle vorhandenen Quizze aus */
 router.get("/info/:id", async (req, res) => {
     
     const ModuleId = req.params.id;
@@ -13,6 +15,7 @@ router.get("/info/:id", async (req, res) => {
     res.json(info);
 });
 
+/**Erstellt ein Quiz nach dem angegeben Schema */
 router.post("/quizcreate", async (req, res) => {
     const {question, optionA, optionB, optionC, optionD, answer, score, ModuleId} = req.body;
 

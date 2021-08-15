@@ -1,5 +1,7 @@
 const {verify } = require('jsonwebtoken');
 
+/**Middleware um zu überprüfen, ob der User angemeldet ist */
+
 const validateToken = (req, res, next) => {
     const accessToken = req.header("accessToken");
 

@@ -21,9 +21,9 @@ function Login() {
             if (response.data.error) {
                 alert(response.data.error); 
             } else {
-                localStorage.setItem("accessToken", response.data.token);
+                localStorage.setItem("accessToken", response.data.token);               /**AccessToken Benutzerspezifisch setzen */
                 setAuthState({username: response.data.username, id: response.data.id, status: true});
-                history.push("/startseite"); /* Redirect after sucessful login*/
+                history.push("/startseite"); /* Weiterleiten nach erfolgreichem login auf /startseite des Dashboards*/
             }
         });
     };
@@ -40,26 +40,26 @@ function Login() {
             <form method="post">
                 <div className="txt_field">
                     <input type="text" required onChange={(event) => {
-                setUsername(event.target.value);
+                setUsername(event.target.value);                        /**Setzt Usernamen nach Submit*/
             }}/>
                     <span></span>
-                    <label > Username </label>
+                    <label > Benutzername </label>
                 </div>
                 <div className="txt_field">
                 <input type="password" required onChange={(event) => {
-                setPassword(event.target.value);
+                setPassword(event.target.value);                        /**Setzt Passwort nach Submit*/
             }}/>
                 <span></span>
-                <label> Password </label>
+                <label> Passwort </label>
                 </div>
-                <div className="pass">Forgot Password?</div>
+                <div className="pass">Passwort vergessen?</div>
                 
             </form>
             
             <input type="submit" onClick={login} value="Login" />
             <div className="signup_link">
-                    Not a member?
-                    <a href="/registration">Sign Up</a>
+                     Noch kein Mitglied?
+                    <a href="/registration">Registrieren</a>                 {/**Link zur Registrierungsseite */}
                 </div>
 
         </div>

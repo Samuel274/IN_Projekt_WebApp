@@ -8,14 +8,14 @@ import QueueIcon from '@material-ui/icons/Queue';
 
 export const SidebarDataLehrer = [
     {
+        title: "Home",
+        icon: <AppsIcon />,
+        link: "/"
+    },
+    {
         title: "Module",
         icon: <ImportContactsIcon />,
         link: "/modules"
-    },
-    {
-        title: "Katalog",
-        icon: <AppsIcon />,
-        link: "/catalogue"
     },
     {
         title: "Ranking",

@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     height: auto;
+    margin-left: 15px;
     padding: 0;
     align-items: center;
     margin-top: 10px;
@@ -60,6 +61,7 @@ background: black;
     background-color: grey;
     margin-top: 50px;
     font-size: 20px;
+    margin-left: 10%;
 }
 .sidebar__container{
     height: 100vh;

@@ -8,3 +8,21 @@
     border-radius: 25px;
     padding: 25px;
 }
+
+.txt_field_quiz{
+    display: flex;
+    display: table-row;
+
+}
+
+.txt_field_quiz label{
+    display: flex;
+
+}
+
+.inputData{
+    justify-content: right;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}

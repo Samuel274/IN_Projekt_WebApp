@@ -9,8 +9,25 @@
     padding: 25px;
 }
 
+.change__password label{
+    margin-top: 10px;
+}
+
+.change__password input{
+    width: 50%;
+    max-width: 300px;
+}
+.change__passwordButton{
+    margin-top: 10px; 
+    width: 20%;
+    min-width: 100px;
+    max-width: 300px;
+}
+
 .delete__account{
     display: flex;
+    justify-self: center;
+    align-items: center;
     margin-top: 25px;
     flex-direction: column;
     background-color: white;
@@ -19,4 +36,16 @@
     box-shadow: 0px 1px 5px 0px #676767;
     border-radius: 25px;
     padding: 25px;
+}
+
+.delete__accountButton{
+    background-color: lightcoral;
+    width: 20%;
+    min-width: 100px;
+    max-width: 300px;
+}
+
+.delete__accountButton:hover{
+    background-color: darkred;
+    width: 20%;
 }

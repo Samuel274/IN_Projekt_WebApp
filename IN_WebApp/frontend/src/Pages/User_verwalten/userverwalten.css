@@ -8,6 +8,10 @@
     border-radius: 25px;
     padding: 25px;
 }
+.delete___user input{
+    width: 120%;
+
+}
 
 .administer__user {
     display: flex;
@@ -19,5 +23,10 @@
     box-shadow: 0px 1px 5px 0px #676767;
     border-radius: 25px;
     padding: 25px;
+
+}
+
+.administer__user input{
+    width: 120%;
 
 }

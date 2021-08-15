@@ -9,14 +9,14 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 
 export const SidebarData = [
     {
+        title: "Home",
+        icon: <AppsIcon />,
+        link: "/"
+    },
+    {
         title: "Module",
         icon: <ImportContactsIcon />,
         link: "/modules"
-    },
-    {
-        title: "Katalog",
-        icon: <AppsIcon />,
-        link: "/catalogue"
     },
     {
         title: "Ranking",

@@ -90,11 +90,11 @@ function Profile() {
             <input type="text" placeholder="Altes Passwort..." onChange={(event) => {setOldPassword(event.target.value)}}/>
             <label>Neues Passwort:</label>
             <input type="text" placeholder="Neues Passwort..." onChange={(event) => {setNewPassword(event.target.value)}}/>
-            <button type="submit" onClick={changePassword}> Submit</button>  
+            <button className="change__passwordButton" type="submit" onClick={changePassword}> Passwort ändern </button>  
         </div>
 
         <div className="delete__account">
-            <button onClick={deleteAccount}>DELTE</button>
+            <button className="delete__accountButton" onClick={deleteAccount}>Account löschen</button>
         </div>
         </Dashboard_Page>
     )

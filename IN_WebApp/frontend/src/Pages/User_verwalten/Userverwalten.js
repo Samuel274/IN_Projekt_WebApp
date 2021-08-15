@@ -51,10 +51,10 @@ function Userverwalten() {
                         <Field className="inputData" name="username" placeholder="Benutzername" />
                         </div>
                         <div className="txt_field_quiz">    
-                        <label>Role: </label>
+                        <label>Berechtigung: </label>
                         <Field className="inputData" name="role" placeholder="Student, Lehrer oder Admin" />
                         </div>
-                    <button className="quiz__button" type="submit"> Rolle wechseln </button>  
+                    <button className="quiz__button" type="submit"> Berechtigung wechseln </button>  
                 </Form>
             </Formik>
             </div>

@@ -24,7 +24,7 @@ function Profile() {
       const [id, setId] = useState();
 
     const changePassword = () => {
-        axios.put("http://localhost:3001/users/changepassword", {
+        axios.put("http://62.171.138.202:3001/users/changepassword", {
             oldPassword: oldPassword, 
             newPassword: newPassword,
         },
@@ -36,6 +36,8 @@ function Profile() {
         ).then((response) => {
             if (response.data.error){
                 alert(response.data.error);
+            } else{
+              window.alert("Passwort wurde geändert!");
             }
         });
         ;
@@ -45,8 +47,9 @@ function Profile() {
     const deleteAccount = () => {
         const username = authState.username;
         console.log("Username " + username)
-        axios.delete(`http://localhost:3001/users/delete/${username}`,).then(() => {
+        axios.delete(`http://62.171.138.202:3001/users/delete/${username}`,).then(() => {
           history.push("/");
+          window.alert("Dein Account wurde gelöscht!!");
         localStorage.removeItem("accessToken");
         setAuthState({
           username: "", 
@@ -59,7 +62,7 @@ function Profile() {
 
     useEffect(() => {
         if (localStorage.getItem('accessToken')) {
-          axios.get('http://localhost:3001/users/auth', 
+          axios.get('http://62.171.138.202:3001/users/auth', 
           {headers: {
             accessToken: localStorage.getItem('accessToken'),
           },
@@ -87,9 +90,9 @@ function Profile() {
         <div className="change__password">   
             <h2>Passwort ändern:</h2>
             <label>Altes Passwort: </label>
-            <input type="text" placeholder="Altes Passwort..." onChange={(event) => {setOldPassword(event.target.value)}}/>
+            <input type="password" placeholder="Altes Passwort..." onChange={(event) => {setOldPassword(event.target.value)}}/>
             <label>Neues Passwort:</label>
-            <input type="text" placeholder="Neues Passwort..." onChange={(event) => {setNewPassword(event.target.value)}}/>
+            <input type="password" placeholder="Neues Passwort..." onChange={(event) => {setNewPassword(event.target.value)}}/>
             <button className="change__passwordButton" type="submit" onClick={changePassword}> Passwort ändern </button>  
         </div>
 

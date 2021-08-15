@@ -23,7 +23,7 @@ function Home() {
 
     useEffect(() => {
         if (localStorage.getItem('accessToken')) {
-          axios.get('http://localhost:3001/users/auth', 
+          axios.get('http://62.171.138.202:3001/users/auth', 
           {headers: {
             accessToken: localStorage.getItem('accessToken'),
           },

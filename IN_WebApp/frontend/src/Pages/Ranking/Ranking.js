@@ -9,7 +9,7 @@ function Ranking() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:3001/users/ranking", { headers: { accessToken: localStorage.getItem("accessToken")},
+        axios.get("http://62.171.138.202:3001/users/ranking", { headers: { accessToken: localStorage.getItem("accessToken")},
         })
         .then((response) => {
             setListOfRanking(response.data);

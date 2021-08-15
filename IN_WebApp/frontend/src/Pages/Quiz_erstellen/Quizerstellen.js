@@ -18,8 +18,9 @@ function Quizerstellen() {
     };
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/quizzes/quizcreate", data).then(() => {
+        axios.post("http://62.171.138.202:3001/quizzes/quizcreate", data).then(() => {
             console.log(data);
+            window.alert("Quiz wurde erstellt!");
         })
         console.log(data);
     }

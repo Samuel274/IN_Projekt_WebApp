@@ -14,8 +14,9 @@ function Userverwalten() {
 
     const changeRole = (data) => {
         console.log(data);
-        axios.put("http://localhost:3001/users/changerole", data).then(() => {
+        axios.put("http://62.171.138.202:3001/users/changerole", data).then(() => {
             console.log(data);
+            window.alert("Nutzer Rolle geändert!");
         });
 
         };
@@ -23,8 +24,9 @@ function Userverwalten() {
 
     const deleteUser = (username) => {
         console.log(username);
-        axios.delete(`http://localhost:3001/users/delete/${username.username}`,).then(() => {
+        axios.delete(`http://62.171.138.202:3001/users/delete/${username.username}`,).then(() => {
             console.log(username);
+            window.alert("Nutzer gelöscht!");
     });
 
 };

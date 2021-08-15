@@ -15,7 +15,7 @@ function Registration() {
     };
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/users/registration", data).then(() => {
+        axios.post("http://62.171.138.202:3001/users/registration", data).then(() => {
             console.log(data);
         })
         history.push("/login");
